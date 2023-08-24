@@ -1,12 +1,12 @@
 lock "~> 3.10"    # 1
 
-set :application, "blog_app"    # 2
+set :application, "my_blog_app"    # 2
 set :repo_url, "https://github.com/Abdoul08/deploy_to_aws.git"   # 3
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/uploads}   # 5
 set :keep_releases, 5   # 6
 set :rbenv_ruby, '3.0.1'    # 7
 set :log_level, :info   # 8
-set :linked_files, %w{config/secrets.yml .env}
+set :linked_files, %w{config/secrets.yml}
 
 after 'deploy:published', 'deploy:seed'   # 9
 after 'deploy:finished', 'deploy:restart'   # 10
